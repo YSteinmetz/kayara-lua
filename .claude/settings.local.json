@@ -1,8 +1,0 @@
-{
-  "permissions": {
-    "allow": [
-      "Bash(python3 extract_canva.py)",
-      "Bash(curl -s \"https://kayara-lua.my.canva.site/\")"
-    ]
-  }
-}
