@@ -1,0 +1,19 @@
+/* Hostinger fixes: override Canva-generated image variables that point to missing hashed filenames */
+:root, .light, .dark {
+  --nVBSCg: none;
+  --e96txA: none;
+  --_dDCjg: none;
+  --yPZOVA: none;
+  --b3EwcA: none;
+  --XPBBWg: none;
+  --Jrc9ZQ: none;
+  --u_05Vw: none;
+  --nCS25g: none;
+  --NJTh4Q: none;
+  --oqAvaw: none;
+  --x5fGZQ: none;
+  --agxO6A: none;
+  --nVBSCg: none;
+  --e96txA: none;
+}
+/* If some visuals disappear, add specific images into assets/images/ and remove or customize this file later. */
