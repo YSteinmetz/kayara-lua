@@ -74,18 +74,22 @@ export const services = {
       // Troque pela URL ou caminho da imagem do serviço
       image: "/images/terapia_corporal.jpg",
       imageAlt: "Terapia Corporal",
+      // Troque pela descrição que aparece ao passar o mouse (ou tocar no mobile)
+      description: "Troque pela descrição — conte o que o cliente pode esperar desta modalidade.",
     },
     {
       title: "Massagem Relaxante",
       mode: "Presencial",
       image: "/images/massagem_relaxante.jpg",
       imageAlt: "Massagem Relaxante",
+      description: "Troque pela descrição — conte o que o cliente pode esperar desta modalidade.",
     },
     {
       title: "Vivência Sonora",
       mode: "Presencial com cacau",
       image: "/images/vivencia_sonora.jpg",
       imageAlt: "Vivência Sonora",
+      description: "Troque pela descrição — conte o que o cliente pode esperar desta modalidade.",
     },
   ],
 

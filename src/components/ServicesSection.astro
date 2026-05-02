@@ -23,8 +23,16 @@ const { how } = services;
     <div class="max-w-5xl mx-auto px-8 grid md:grid-cols-3 gap-10 mt-6">
       {services.items.map((item, i) => (
         <div class="text-center reveal" style={`transition-delay: ${i * 0.12}s`}>
-          <div class="arch-shape w-full h-60 mb-5">
-            <img src={item.image} alt={item.imageAlt} />
+          <div class="service-flip w-full h-60 mb-5 cursor-pointer">
+            <div class="service-flip-inner">
+              <div class="service-flip-front" data-cta="saiba mais">
+                <img src={item.image} alt={item.imageAlt} class="w-full h-full object-cover" />
+              </div>
+              <div class="service-flip-back">
+                <h3 class="font-serif text-lg font-medium">{item.title}</h3>
+                <p class="text-sm font-light leading-relaxed">{item.description}</p>
+              </div>
+            </div>
           </div>
           <h3 class="font-serif text-xl font-medium">{item.title}</h3>
           <p class="text-sm text-[#7A6A58] mt-1 font-light">{item.mode}</p>
@@ -87,3 +95,21 @@ const { how } = services;
   </div>
 
 </section>
+
+<script>
+  const isTouch = window.matchMedia('(hover: none), (pointer: coarse)').matches;
+
+  // Texto do CTA: "toque" em mobile, "saiba mais" em desktop
+  if (isTouch) {
+    document.querySelectorAll('.service-flip-front').forEach(front => {
+      (front as HTMLElement).dataset.cta = 'toque para ver';
+    });
+  }
+
+  // Clique gira o card em todos os dispositivos
+  document.querySelectorAll<HTMLElement>('.service-flip').forEach(flip => {
+    flip.addEventListener('click', () => {
+      flip.querySelector('.service-flip-inner')?.classList.toggle('flipped');
+    });
+  });
+</script>
