@@ -8,7 +8,7 @@ const { how } = services;
   <!-- ── Atendimentos ── -->
   <div class="py-20 text-center">
     <div class="mb-30 text-center">
-      <div class="inline-block relative">
+      <div class="inline-block relative reveal">
         <h2 class="font-display text-4xl md:text-5xl font-light text-accent mb-0">
           {services.title}
         </h2>
@@ -21,8 +21,8 @@ const { how } = services;
     </div>
     
     <div class="max-w-5xl mx-auto px-8 grid md:grid-cols-3 gap-10 mt-6">
-      {services.items.map(item => (
-        <div class="text-center">
+      {services.items.map((item, i) => (
+        <div class="text-center reveal" style={`transition-delay: ${i * 0.12}s`}>
           <div class="arch-shape w-full h-60 mb-5">
             <img src={item.image} alt={item.imageAlt} />
           </div>
@@ -60,16 +60,16 @@ const { how } = services;
 
   <!-- ── Como cada sessão funciona ── -->
   <div class="max-w-5xl mx-auto px-8 py-24 text-center">
-    <h2 class="font-display text-4xl md:text-5xl font-light mb-4 text-accent">
+    <h2 class="font-display text-4xl md:text-5xl font-light mb-4 text-accent reveal">
       {how.title}
     </h2>
-    <p class="text-sm text-[#7A6A58] tracking-wide mb-16">
+    <p class="text-sm text-[#7A6A58] tracking-wide mb-16 reveal" style="transition-delay: 0.1s">
       {how.subtitle}
     </p>
 
     <div class="grid md:grid-cols-3 gap-x-10 gap-y-14">
-      {how.items.map(item => (
-        <div class="text-left group">
+      {how.items.map((item, i) => (
+        <div class="text-left group reveal" style={`transition-delay: ${i * 0.09}s`}>
           <div class="overflow-hidden mb-4">
             <img
               src={item.image}

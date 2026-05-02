@@ -15,7 +15,7 @@ const after = words.slice(highlightIdx + 1).join(' ');
   <div class="max-w-6xl mx-auto px-8 py-28 grid md:grid-cols-2 gap-20 items-center">
 
     <!-- Coluna esquerda: Headline + Redes sociais -->
-    <div>
+    <div class="reveal">
       <h2 class="font-serif text-4xl md:text-5xl lg:text-6xl font-light leading-tight mb-10">
         {before}
         <!-- Palavra com destaque oval -->
@@ -73,7 +73,7 @@ const after = words.slice(highlightIdx + 1).join(' ');
     </div>
 
     <!-- Coluna direita: Telefone -->
-    <div class="flex md:justify-end">
+    <div class="flex md:justify-end reveal" style="transition-delay: 0.2s">
       <div class="flex items-center gap-5">
         <div class="w-14 h-14 rounded-full border border-white/40 flex items-center justify-center flex-shrink-0">
           <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">

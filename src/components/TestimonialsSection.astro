@@ -7,7 +7,7 @@ import { testimonials } from '../config/content';
 
     <!-- Título -->
     <div class="text-center mb-20">
-      <div class="inline-block relative pb-1">
+      <div class="inline-block relative pb-1 reveal">
         <h2 class="font-display text-5xl md:text-6xl font-light">
           {testimonials.title}
         </h2>
@@ -21,8 +21,8 @@ import { testimonials } from '../config/content';
 
     <!-- Cards -->
     <div class="grid md:grid-cols-3 gap-12 md:gap-16">
-      {testimonials.items.map(item => (
-        <div class="flex flex-col text-center">
+      {testimonials.items.map((item, i) => (
+        <div class="flex flex-col text-center reveal" style={`transition-delay: ${i * 0.15}s`}>
           <!-- Frase de destaque -->
           <p class="font-display italic text-xl md:text-2xl leading-snug mb-6 text-white/95 min-h-[7rem]">
             "{item.quote}"

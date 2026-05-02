@@ -10,7 +10,7 @@ import { about } from '../config/content';
 
       <!-- Texto -->
       <div>
-        <div class="mb-10 relative inline-block">
+        <div class="mb-10 relative inline-block reveal">
           <img
             src="/images/about_decoration.svg"
             alt="Decoração"
@@ -22,13 +22,13 @@ import { about } from '../config/content';
             {about.title}
           </span>
         </div>
-        <p class="text-base leading-8 text-[#4A4A4A] max-w-md">
+        <p class="text-base leading-8 text-[#4A4A4A] max-w-md reveal" style="transition-delay: 0.1s">
           {about.bio}
         </p>
       </div>
 
       <!-- Foto -->
-      <div class="flex justify-center md:justify-end">
+      <div class="flex justify-center md:justify-end reveal" style="transition-delay: 0.2s">
         <div class="arch-frame">
           <div class="arch-shape w-64 h-64 md:w-72 md:h-72 lg:w-80 lg:h-120">
             <img src={about.photo} alt={about.photoAlt} />
@@ -40,13 +40,13 @@ import { about } from '../config/content';
 
   <!-- ── Background ── -->
   <div class="py-20 text-center">
-    <h2 class="font-display text-4xl md:text-5xl mb-16 font-light text-accent">
+    <h2 class="font-display text-4xl md:text-5xl mb-16 font-light text-accent reveal">
       {about.backgroundTitle}
     </h2>
 
     <div class="max-w-5xl mx-auto px-8 grid md:grid-cols-3 gap-8">
-      {about.background.map(item => (
-        <div class="flex flex-col items-center text-center">
+      {about.background.map((item, i) => (
+        <div class="flex flex-col items-center text-center reveal" style={`transition-delay: ${i * 0.13}s`}>
           <!-- Ícone circular -->
           <div class="w-14 h-14 rounded-full border border-[#A89880] flex items-center justify-center mb-5">
             <svg class="w-6 h-6 text-[#8B7560]" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
