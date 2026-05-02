@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(dir \"F:\\\\Documentos\\\\repo\\\\kayara-lua\\\\referência\")",
+      "Bash(npm run *)"
+    ]
+  }
+}

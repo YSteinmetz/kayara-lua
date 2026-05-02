@@ -1,0 +1,95 @@
+---
+import { services } from '../config/content';
+const { how } = services;
+---
+
+<section id="servicos" class="bg-cream">
+
+  <!-- ── Atendimentos ── -->
+  <div class="py-20 text-center">
+    <div class="mb-14 relative inline-block">
+      <h2 class="font-serif text-4xl md:text-5xl font-light relative z-10">
+        {services.title}
+      </h2>
+      <!-- Linha ondulada decorativa -->
+      <svg
+        class="absolute -bottom-3 left-0 w-full"
+        viewBox="0 0 200 12"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        preserveAspectRatio="none"
+      >
+        <path
+          d="M0 6 Q25 0 50 6 Q75 12 100 6 Q125 0 150 6 Q175 12 200 6"
+          stroke="#A89878"
+          stroke-width="1.5"
+          fill="none"
+        />
+      </svg>
+    </div>
+
+    <div class="max-w-5xl mx-auto px-8 grid md:grid-cols-3 gap-10 mt-6">
+      {services.items.map(item => (
+        <div class="text-center">
+          <img
+            src={item.image}
+            alt={item.imageAlt}
+            class="w-full h-52 object-cover mb-5"
+            style="border-radius: 2px;"
+          />
+          <h3 class="font-serif text-xl font-medium">{item.title}</h3>
+          <p class="text-sm text-[#7A6A58] mt-1 font-light">{item.mode}</p>
+        </div>
+      ))}
+    </div>
+
+    <a
+      href={services.bookingHref}
+      class="inline-block mt-14 text-sm italic text-[#5A4A38] underline underline-offset-4 hover:text-[#2C2C2C] transition-colors"
+    >
+      {services.bookingLabel}
+    </a>
+  </div>
+
+  <!-- ── Collage decorativo (fundo terracota) ── -->
+  <div class="grid grid-cols-2 h-[55vh]">
+    <img
+      src={how.collage[0]}
+      alt=""
+      class="w-full h-full object-cover"
+    />
+    <div class="grid grid-rows-2">
+      <img src={how.collage[1]} alt="" class="w-full h-full object-cover" />
+      <img src={how.collage[2]} alt="" class="w-full h-full object-cover" />
+    </div>
+  </div>
+
+  <!-- ── Como cada sessão funciona ── -->
+  <div class="max-w-5xl mx-auto px-8 py-24 text-center">
+    <h2 class="font-serif text-4xl md:text-5xl font-light mb-4">
+      {how.title}
+    </h2>
+    <p class="text-sm text-[#7A6A58] tracking-wide mb-16">
+      {how.subtitle}
+    </p>
+
+    <div class="grid md:grid-cols-3 gap-x-10 gap-y-14">
+      {how.items.map(item => (
+        <div class="text-left group">
+          <div class="overflow-hidden mb-4">
+            <img
+              src={item.image}
+              alt={item.title}
+              class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500"
+            />
+          </div>
+          <p class="text-xs tracking-widest uppercase text-[#9A8A78] mb-1">
+            {item.category}
+          </p>
+          <h3 class="font-serif text-lg font-medium">{item.title}</h3>
+        </div>
+      ))}
+    </div>
+  </div>
+
+</section>

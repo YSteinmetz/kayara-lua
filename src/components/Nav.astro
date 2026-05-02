@@ -1,0 +1,84 @@
+---
+import { nav, site } from '../config/content';
+---
+
+<header
+  id="navbar"
+  class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 text-white"
+>
+  <div class="max-w-7xl mx-auto px-8 py-5 flex items-center justify-between">
+    <a
+      href="#inicio"
+      class="font-serif text-xl tracking-wide transition-colors duration-300"
+    >
+      {site.name}
+    </a>
+
+    <!-- Desktop menu -->
+    <nav class="hidden md:flex items-center gap-10">
+      {nav.links.map(link => (
+        <a
+          href={link.href}
+          class="text-xs tracking-widest uppercase font-light hover:opacity-60 transition-opacity"
+        >
+          {link.label}
+        </a>
+      ))}
+    </nav>
+
+    <!-- Mobile hamburger -->
+    <button
+      id="menu-btn"
+      class="md:hidden flex flex-col gap-1.5 p-1"
+      aria-label="Abrir menu"
+    >
+      <span class="block w-6 h-px bg-current transition-all duration-300"></span>
+      <span class="block w-6 h-px bg-current transition-all duration-300"></span>
+      <span class="block w-4 h-px bg-current transition-all duration-300 self-end"></span>
+    </button>
+  </div>
+
+  <!-- Mobile menu -->
+  <div
+    id="mobile-menu"
+    class="hidden md:hidden bg-cream text-[#2C2C2C] px-8 pb-8 pt-2"
+  >
+    {nav.links.map(link => (
+      <a
+        href={link.href}
+        class="mobile-link block py-3 text-sm tracking-widest uppercase border-b border-gray-200 hover:opacity-60 transition-opacity"
+      >
+        {link.label}
+      </a>
+    ))}
+  </div>
+</header>
+
+<script>
+  const navbar = document.getElementById('navbar');
+  const menuBtn = document.getElementById('menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  // Scroll: muda fundo e cor do texto
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 80) {
+      navbar?.classList.add('bg-cream', 'shadow-sm', '!text-[#2C2C2C]');
+      navbar?.classList.remove('text-white');
+    } else {
+      navbar?.classList.remove('bg-cream', 'shadow-sm', '!text-[#2C2C2C]');
+      navbar?.classList.add('text-white');
+    }
+  });
+
+  // Mobile menu toggle
+  menuBtn?.addEventListener('click', () => {
+    mobileMenu?.classList.toggle('hidden');
+  });
+
+  // Fecha mobile menu ao clicar em link
+  document.querySelectorAll('.mobile-link').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu?.classList.add('hidden');
+    });
+  });
+</script>
