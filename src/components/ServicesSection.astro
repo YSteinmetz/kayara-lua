@@ -1,0 +1,115 @@
+---
+import { services } from '../config/content';
+const { how } = services;
+---
+
+<section id="servicos" class="bg-cream">
+
+  <!-- ── Atendimentos ── -->
+  <div class="py-20 text-center">
+    <div class="mb-30 text-center">
+      <div class="inline-block relative reveal">
+        <h2 class="font-display text-4xl md:text-5xl font-light text-accent mb-0">
+          {services.title}
+        </h2>
+        <img
+          src="/images/service_decoration.svg"
+          alt=""
+          class="absolute left-[36%] top-full w-[250px] opacity-60"
+        />
+      </div>
+    </div>
+    
+    <div class="max-w-5xl mx-auto px-8 grid md:grid-cols-3 gap-10 mt-6">
+      {services.items.map((item, i) => (
+        <div class="text-center reveal" style={`transition-delay: ${i * 0.12}s`}>
+          <div class="service-flip w-full h-60 mb-5 cursor-pointer">
+            <div class="service-flip-inner">
+              <div class="service-flip-front" data-cta="saiba mais">
+                <img src={item.image} alt={item.imageAlt} class="w-full h-full object-cover" />
+              </div>
+              <div class="service-flip-back">
+                <h3 class="font-serif text-lg font-medium">{item.title}</h3>
+                <p class="text-sm font-light leading-relaxed">{item.description}</p>
+              </div>
+            </div>
+          </div>
+          <h3 class="font-serif text-xl font-medium">{item.title}</h3>
+          <p class="text-sm text-[#7A6A58] mt-1 font-light">{item.mode}</p>
+        </div>
+      ))}
+    </div>
+
+    <a
+      href={services.bookingHref}
+      class="inline-block mt-14 text-sm italic text-[#5A4A38] underline underline-offset-4 hover:text-[#2C2C2C] transition-colors"
+    >
+      {services.bookingLabel}
+    </a>
+  </div>
+
+  <!-- ── Collage decorativo (fundo terracota) ── -->
+  <div class="grid grid-cols-3 gap-8 h-[70vh] bg-terra px-16 py-8 overflow-hidden">
+    <!-- Esquerda: arco no topo — alinhado embaixo -->
+    <div class="self-start arch-top overflow-hidden h-[38vh] w-[75%] mx-auto">
+      <img src={how.collage[0]} alt="" class="w-full h-full object-cover" />
+    </div>
+
+    <!-- Centro: retângulo, mais alto — centralizado -->
+    <div class="self-center h-[56vh] w-[85%] mx-auto overflow-hidden">
+      <img src={how.collage[1]} alt="" class="w-full h-full object-cover" />
+    </div>
+
+    <!-- Direita: arco embaixo — alinhado em cima -->
+    <div class="self-end arch-bottom overflow-hidden h-[32vh] w-[75%] mx-auto">
+      <img src={how.collage[2]} alt="" class="w-full h-full object-cover" />
+    </div>
+  </div>
+
+  <!-- ── Como cada sessão funciona ── -->
+  <div class="max-w-5xl mx-auto px-8 py-24 text-center">
+    <h2 class="font-display text-4xl md:text-5xl font-light mb-4 text-accent reveal">
+      {how.title}
+    </h2>
+    <p class="text-sm text-[#7A6A58] tracking-wide mb-16 reveal" style="transition-delay: 0.1s">
+      {how.subtitle}
+    </p>
+
+    <div class="grid md:grid-cols-3 gap-x-10 gap-y-14">
+      {how.items.map((item, i) => (
+        <div class="text-left group reveal" style={`transition-delay: ${i * 0.09}s`}>
+          <div class="overflow-hidden mb-4">
+            <img
+              src={item.image}
+              alt={item.title}
+              class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500"
+            />
+          </div>
+          <p class="text-xs tracking-widest uppercase text-[#9A8A78] mb-1">
+            {item.category}
+          </p>
+          <h3 class="font-serif text-lg font-medium">{item.title}</h3>
+        </div>
+      ))}
+    </div>
+  </div>
+
+</section>
+
+<script>
+  const isTouch = window.matchMedia('(hover: none), (pointer: coarse)').matches;
+
+  // Texto do CTA: "toque" em mobile, "saiba mais" em desktop
+  if (isTouch) {
+    document.querySelectorAll('.service-flip-front').forEach(front => {
+      (front as HTMLElement).dataset.cta = 'toque para ver';
+    });
+  }
+
+  // Clique gira o card em todos os dispositivos
+  document.querySelectorAll<HTMLElement>('.service-flip').forEach(flip => {
+    flip.addEventListener('click', () => {
+      flip.querySelector('.service-flip-inner')?.classList.toggle('flipped');
+    });
+  });
+</script>

@@ -1,0 +1,51 @@
+---
+import { testimonials } from '../config/content';
+---
+
+<section id="depoimentos" class="bg-forest text-white py-28">
+  <div class="max-w-6xl mx-auto px-8">
+
+    <!-- Título -->
+    <div class="text-center mb-20">
+      <div class="inline-block relative pb-1 reveal">
+        <h2 class="font-display text-5xl md:text-6xl font-light">
+          {testimonials.title}
+        </h2>
+        <img
+          src="/images/testimonials_decorator.svg"
+          alt=""
+          class="absolute left-[50%] top-full w-52 invert opacity-50"
+        />
+      </div>
+    </div>
+
+    <!-- Cards -->
+    <div class="grid md:grid-cols-3 gap-12 md:gap-16">
+      {testimonials.items.map((item, i) => (
+        <div class="flex flex-col text-center reveal" style={`transition-delay: ${i * 0.15}s`}>
+          <!-- Frase de destaque -->
+          <p class="font-display italic text-xl md:text-2xl leading-snug mb-6 text-white/95 min-h-[7rem]">
+            "{item.quote}"
+          </p>
+
+          <!-- Divisor -->
+          <hr class="border-white/25 mb-6" />
+
+          <!-- Texto completo -->
+          <p class="text-sm leading-7 text-white/75 mb-6">
+            {item.body}
+          </p>
+
+          <!-- Autor -->
+          <p class="text-xs tracking-widest uppercase text-white/50 mt-4">
+            {item.author}, {item.role}
+          </p>
+          
+        </div>
+        
+
+      ))}
+    </div>
+
+  </div>
+</section>

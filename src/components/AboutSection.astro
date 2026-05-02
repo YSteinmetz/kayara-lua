@@ -1,0 +1,64 @@
+---
+import { about } from '../config/content';
+---
+
+<section id="sobre" class="bg-cream">
+
+  <!-- ── Sobre mim ── -->
+  <div class="max-w-6xl mx-auto px-8 pt-28 pb-20">
+    <div class="grid md:grid-cols-2 gap-16 items-center">
+
+      <!-- Texto -->
+      <div>
+        <div class="mb-10 relative inline-block reveal">
+          <img
+            src="/images/about_decoration.svg"
+            alt="Decoração"
+            class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150%] h-[150%] pointer-events-none"
+          />
+          <span
+            class="font-display text-4xl md:text-5xl italic px-10 py-3 inline-block leading-tight relative z-10 text-accent"
+          >
+            {about.title}
+          </span>
+        </div>
+        <p class="text-base leading-8 text-[#4A4A4A] max-w-md reveal" style="transition-delay: 0.1s">
+          {about.bio}
+        </p>
+      </div>
+
+      <!-- Foto -->
+      <div class="flex justify-center md:justify-end reveal" style="transition-delay: 0.2s">
+        <div class="arch-frame">
+          <div class="arch-shape w-64 h-64 md:w-72 md:h-72 lg:w-80 lg:h-120">
+            <img src={about.photo} alt={about.photoAlt} />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Background ── -->
+  <div class="py-20 text-center">
+    <h2 class="font-display text-4xl md:text-5xl mb-16 font-light text-accent reveal">
+      {about.backgroundTitle}
+    </h2>
+
+    <div class="max-w-5xl mx-auto px-8 grid md:grid-cols-3 gap-8">
+      {about.background.map((item, i) => (
+        <div class="flex flex-col items-center text-center reveal" style={`transition-delay: ${i * 0.13}s`}>
+          <!-- Ícone circular -->
+          <div class="w-14 h-14 rounded-full border border-[#A89880] flex items-center justify-center mb-5">
+            <svg class="w-6 h-6 text-[#8B7560]" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+            </svg>
+          </div>
+          <h3 class="font-serif text-3xl font-medium pb-3 border-b border-[#C8BCA8]">{item.institution}</h3>
+          <p class="text-sm text-[#7A6A58] mt-3 font-bold">{item.distinction}</p>
+          <p class="text-xs text-[#9A8A78] mt-1 tracking-wide">{item.period}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+
+</section>
