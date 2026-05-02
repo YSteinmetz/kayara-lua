@@ -7,11 +7,16 @@ import { testimonials } from '../config/content';
 
     <!-- Título -->
     <div class="text-center mb-20">
-      <h2 class="font-serif text-5xl md:text-6xl font-light">
-        {testimonials.title}
-      </h2>
-      <!-- Linha decorativa -->
-      <div class="mt-5 mx-auto w-56 h-px bg-white/40"></div>
+      <div class="inline-block relative pb-1">
+        <h2 class="font-display text-5xl md:text-6xl font-light">
+          {testimonials.title}
+        </h2>
+        <img
+          src="/images/testimonials_decorator.svg"
+          alt=""
+          class="absolute left-[50%] top-full w-52 invert opacity-50"
+        />
+      </div>
     </div>
 
     <!-- Cards -->
@@ -19,23 +24,26 @@ import { testimonials } from '../config/content';
       {testimonials.items.map(item => (
         <div class="flex flex-col text-center">
           <!-- Frase de destaque -->
-          <p class="font-serif italic text-xl md:text-2xl leading-snug mb-8 text-white/95">
+          <p class="font-display italic text-xl md:text-2xl leading-snug mb-6 text-white/95 min-h-[7rem]">
             "{item.quote}"
           </p>
 
           <!-- Divisor -->
-          <hr class="border-white/25 mb-8" />
+          <hr class="border-white/25 mb-6" />
 
           <!-- Texto completo -->
-          <p class="text-sm leading-7 text-white/75 flex-1 mb-8">
+          <p class="text-sm leading-7 text-white/75 mb-6">
             {item.body}
           </p>
 
           <!-- Autor -->
-          <p class="text-xs tracking-widest uppercase text-white/50">
+          <p class="text-xs tracking-widest uppercase text-white/50 mt-4">
             {item.author}, {item.role}
           </p>
+          
         </div>
+        
+
       ))}
     </div>
 

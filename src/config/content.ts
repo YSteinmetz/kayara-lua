@@ -25,7 +25,7 @@ export const hero = {
   name: "Kayara Lua",
   tagline: "Bem-vinda",
   // Troque pela URL ou caminho da sua foto principal (ex: "/images/hero.jpg")
-  image: "https://placehold.co/1920x1080/C4A882/fff?text=Foto+Principal",
+  image: "/images/hero.jpg",
   imageAlt: "Kayara Lua",
 };
 
@@ -35,7 +35,7 @@ export const about = {
   // Troque pelo seu texto de apresentação
   bio: "Exploradora do corpo desde 2013 quando comecei minha graduação em Educação Física. Em 2019 recebi um chamado para atuar com espiritualidade, unindo os campos espiritual e corporal. Comecei a trabalhar nessa jornada de te guiar para um corpo mais presente e te fazer sentir confortável em casa novamente.",
   // Troque pela URL ou caminho da sua foto (ex: "/images/sobre.jpg")
-  photo: "https://placehold.co/480x580/C4A882/fff?text=Sua+Foto",
+  photo: "/images/about_photo.jpg",
   photoAlt: "Kayara Lua",
 
   backgroundTitle: "Background",
@@ -72,19 +72,19 @@ export const services = {
       title: "Terapia Corporal",
       mode: "Online ou Presencial",
       // Troque pela URL ou caminho da imagem do serviço
-      image: "https://placehold.co/600x400/D4C4A8/5C4A30?text=Terapia+Corporal",
+      image: "/images/terapia_corporal.jpg",
       imageAlt: "Terapia Corporal",
     },
     {
       title: "Massagem Relaxante",
       mode: "Presencial",
-      image: "https://placehold.co/600x400/C8B898/5C4A30?text=Massagem+Relaxante",
+      image: "/images/massagem_relaxante.jpg",
       imageAlt: "Massagem Relaxante",
     },
     {
       title: "Vivência Sonora",
       mode: "Presencial com cacau",
-      image: "https://placehold.co/600x400/BCAC88/5C4A30?text=Vivência+Sonora",
+      image: "/images/vivencia_sonora.jpg",
       imageAlt: "Vivência Sonora",
     },
   ],
@@ -94,9 +94,9 @@ export const services = {
     subtitle: "Entenda melhor como cada sessão é conduzida",
     // Imagens do collage decorativo — troque pelas suas fotos
     collage: [
-      "https://placehold.co/900x600/8B3A1E/fff?text=+",
-      "https://placehold.co/450x290/7A3018/fff?text=+",
-      "https://placehold.co/450x290/6A2810/fff?text=+",
+      "/images/collage_1.jpg",
+      "/images/collage_2.jpg",
+      "/images/collage_3.jpg",
     ],
     // Troque os títulos, imagens e categorias pelos seus serviços/etapas
     items: [
@@ -166,7 +166,7 @@ export const testimonials = {
 // ─── SEÇÃO: CONTATO ─────────────────────────────────────────
 export const contact = {
   // Troque pela sua chamada de ação
-  headline: "Entre em contato para criarmos uma experiência de bem-estar",
+  headline: "Entre em contato para criarmos uma experiência de bem-estar juntos.",
   // Palavra que receberá o destaque oval — deve aparecer no headline acima
   highlightWord: "juntos.",
 
